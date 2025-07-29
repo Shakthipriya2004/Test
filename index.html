@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  
+  <link rel="icon" href="https://fiit-student-task.vercel.app/images/educationimg.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="header">
+
+    
+<div class="sidebar-toggle" onclick="toggleSidebar()">
+  <i class="fas fa-chevron-left"></i>
+</div>
+
+      <img src= "https://fiit-student-task.vercel.app/images/educationimg.png" alt="Logo" class="logo">
+  
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="#Dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="#Tests" class="active"><i class="fas fa-file-alt"></i> Tests</a>
+      <a href="#QuestionBanks"><i class="fas fa-book"></i> Question Banks</a>
+      <a href="#Classes"><i class="fas fa-users"></i> Classes</a>
+      <a href="#Teachers"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+    </nav>
+
+    <div class="right-section">
+      <div class="profile-circle">A</div>
+      <span class="admin-name">Admin</span>
+      <button class="nav-toggle" id="navToggle">&#10784;</button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="sidebar" id="sidebar">
+      <button class="add-btn" onclick="addQuestion()">+ ADD QUESTION</button>
+      <hr>
+      <div class="sidebar-section">
+        <h2>SNAPSHOT</h2>
+        &nbsp;
+        <div><b>SECTIONS</b></div>
+        <div class="sidebar-link">➕ New Section</div>
+        <div class="sidebar-link"><span class="dot dot1"></span> Section 1</div>
+        <div class="sidebar-link"><span class="dot dot2"></span> Section 2</div>
+        <div class="sidebar-link">Uncategorized (5)</div>
+      </div>
+
+      <div class="sidebar-section">
+        <div style="font-size: 15px;"><b>TEST INFORMATION</b></div>
+        <div class="sidebar-link"><input type="radio"> Marks: (10)</div>
+        <div class="sidebar-link"><input type="radio"> No. of Q: (10)</div>
+        <div class="sidebar-link"><input type="radio"> Neg: (10)</div>
+        <div class="sidebar-link"><input type="radio"> Duration: (10)</div>
+      </div>
+    </div>
+
+    
+    <div class="content">
+      <h1>Test Questions</h1>
+      <div class="header-bar">
+        <input type="text" class="search-bar" placeholder="Search..." oninput="filterQuestions(this.value)">
+        <div class="view-buttons">
+          <button id="fullBtn" onclick="setViewMode('full')">Full View</button>
+         <span class="dropdown"><button id="viewBtn" onclick="setViewMode('question') , toggleDropdown()" class="dropbtn">View</button>
+           <span id="dropdownContent" class="dropdown-content">
+            
+            <label><input type="checkbox" value="Question">Questions</label>
+            <label><input type="checkbox" value="Owner">Owner</label>
+            <label><input type="checkbox" value="Marks"> Marks</label>
+            <label><input type="checkbox" value="Type"> Type</label>
+            <label><input type="checkbox" value="Actions"> Actions</label>
+            <button onclick="applySelections()">Apply</button>
+           </span>
+          </span>
+        </div> 
+      </div>
+
+      <div class="controls">
+        <label><input type="checkbox" id="selectAll" onchange="selectAllQuestions(this)"> Select All</label>
+      </div>
+
+      <div id="questionContainer"></div>
+
+      <div class="load-buttons">
+        <button id="loadToggleBtn" onclick="toggleLoad()">Load More</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="index.js"></script>
+</body>
+</html>
